@@ -2,3 +2,4 @@ node_modules
 /tmp
 /log
 *.sqlite3
+commit

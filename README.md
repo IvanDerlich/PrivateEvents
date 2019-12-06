@@ -1,24 +1,6 @@
-# README
+# Description
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a project about user, events and invitations. It tries to imitate an mini Eventbrite app.
 
-Things you may want to cover:
+This repository is a solution for the requirements of [this](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations) project of the Odin Project
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

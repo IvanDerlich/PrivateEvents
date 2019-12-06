@@ -1,0 +1,20 @@
+Site Map
+    Events
+        create events    
+        delete?
+        edit?    
+    Login
+        login form
+        signup
+
+Menu
+    logged
+        logout -> if logged
+    Not logged
+        login -> if not logged
+        signup -> if not logged
+    Both
+        home -> events
+    
+    
+

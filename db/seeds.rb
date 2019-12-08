@@ -6,7 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create!(
-  name: "Prueba",
-  email: "prueba@example.com"
+
+user = User.new(name: "Pablo", email: "pablo@example.com")
+user.save
+Event.create!(
+  creator: user, 
+  description: "Pepe's birthday",
+  date: "2019-22-08 20:00:00"
 )

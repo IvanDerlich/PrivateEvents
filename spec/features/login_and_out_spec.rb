@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'Log in and out', type: :feature do
 
-    scenario '#unsuccessful login' do
+    fixtures :users
+
+    scenario '# unsuccessful login' do
         user = User.create!(name: 'Jon')
         visit login_path
         fill_in 'Email', with: 'wrongemail@example.com'
@@ -10,7 +12,7 @@ RSpec.describe 'Log in and out', type: :feature do
         expect(page).to have_content('Invalid login information')
     end
 
-    scenario '#cant login with empty email' do
+    scenario "# can't login with empty email" do
         user = User.create!(name: 'Jon')
         visit login_path
         fill_in 'Email', with: ''
@@ -18,7 +20,7 @@ RSpec.describe 'Log in and out', type: :feature do
         expect(page).to have_content('Invalid login information')
     end
 
-    scenario '#reject unauthorized access to user home' do
+    scenario '# rejects unauthorized access to user home' do
         user = User.create!(name: 'Nonexistent')
         visit user_path(user)       
         expect(page).to have_content('Please log in')
@@ -26,13 +28,14 @@ RSpec.describe 'Log in and out', type: :feature do
 
 
     scenario '#successfull login followed by logout' do
-        user = User.create!(name: 'Prueba')
+        user = users(:pablo)
+        expect(user.name).to match("Pablo")
         visit login_path
-        fill_in 'Email', with: 'prueba@example.com'
+        fill_in 'Email', with: user.email
         click_on 'Login'
-        #visit user_path(user)
         expect(page).to have_content('Log out')
-        #logout tests
+        click_on 'logout'
+        expect(page).to have_content('Log in')
     end  
     
     

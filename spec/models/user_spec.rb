@@ -3,6 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'User', type: :feature do
+    fixtures :users
 
     xit '# invalid user: empty name' do        
         user = User.new(name: '', email: 'pablo@example.com')
@@ -24,9 +25,10 @@ RSpec.describe 'User', type: :feature do
         expect(user).to_not be_valid       
     end    
 
-    it '# accepts a valid user' do        
-        user = User.new(name: 'Pablo', email: 'pablo@example.com')
-        expect(user).to be_valid
-    end
+    it '# creates valid users from fixtures' do 
+        expect(users(:pablo)).to be_valid
+        expect(users(:ivan)).to be_valid
+        expect(users(:gabriela)).to be_valid
+    end   
 
 end

@@ -3,29 +3,9 @@
 require 'rails_helper'
 
 RSpec.describe User, :type => :model do
+    
   fixtures :users
 
-<<<<<<< HEAD
-    it '# invalid user: empty name' do        
-        user = User.new(name: '', email: 'pablo@example.com')
-        expect(user).to_not be_valid       
-    end
-
-    it '# invalid user: empty email' do   
-        user = User.new(name: 'Pablo', email: '')
-        expect(user).to_not be_valid            
-    end    
-
-    it '# invalid user: invalid name' do  
-        user = User.new(name: 'P', email: 'pablo@example.com')
-        expect(user).to_not be_valid       
-    end
-
-    it '# rejects aninvalid user: invalid email' do 
-        user = User.new(name: 'Pablo', email: 'pablo@example')
-        expect(user).to_not be_valid       
-    end    
-=======
   it '#creates valid users from fixtures' do 
     expect(users(:pablo)).to be_valid
     expect(users(:ivan)).to be_valid
@@ -56,7 +36,6 @@ RSpec.describe User, :type => :model do
     user.valid?
     expect(user.errors[:email]).to include("can't be blank")
   end
->>>>>>> origin/test-models-validations
 
   it 'is invalid without name and valid email' do
     user = User.new(email: 'prueba@example.com')

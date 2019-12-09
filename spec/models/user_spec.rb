@@ -2,53 +2,8 @@
 
 require 'rails_helper'
 
-RSpec.describe 'User', type: :feature do
-    fixtures :users
-
-    xit '# invalid user: empty name' do        
-        user = User.new(name: '', email: 'pablo@example.com')
-        expect(user).to_not be_valid       
-    end
-
-    xit '# invalid user: empty email' do   
-        user = User.new(name: 'Pablo', email: '')
-        expect(user).to_not be_valid            
-    end    
-
-    xit '# invalid user: invalid name' do  
-        user = User.new(name: 'P', email: 'pablo@example.com')
-        expect(user).to_not be_valid       
-    end
-
-    xit '# rejects aninvalid user: invalid email' do 
-        user = User.new(name: 'Pablo', email: 'pablo@example')
-        expect(user).to_not be_valid       
-    end    
-
-    xit '# creates valid users from fixtures' do 
-        expect(users(:pablo)).to be_valid
-        expect(users(:ivan)).to be_valid
-        expect(users(:gabriela)).to be_valid
-    end   
-
-end
-
 RSpec.describe User, :type => :model do
-  context "with a valid name" do
-    xit "saves the name to user" do
-      user = User.create!(name: "Kalathras")
-      expect(user.reload.name).to eq("Kalathras")
-    end
-  end
-
-  context "with an invalid name" do
-    xit "returns false" do
-      name = "k" * 51
-      user = User.new(name: name)
-      expect(user.save).to be(false)
-    end
-  end
-
+    
   it 'is valid with name and email' do
     user = User.new(name: 'John Doe', email: 'john@example.com')
     expect(user).to be_valid

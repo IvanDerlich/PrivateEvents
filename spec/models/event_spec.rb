@@ -7,7 +7,7 @@ RSpec.describe 'Event', type: :feature do
         @user2 = User.new(name: 'Pablo', email: 'pablo@example.com')
     end
 
-    xit '# create invalid event: empty description' do  
+    it '# create invalid event: empty description' do  
         event = Event.new(creator: user, description: '', date: '')
         expect(event).to_not be_valid          
     end    

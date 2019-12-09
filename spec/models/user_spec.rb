@@ -3,10 +3,17 @@
 require 'rails_helper'
 
 RSpec.describe User, :type => :model do
-    
+  fixtures :users
+
+  it '#creates valid users from fixtures' do 
+    expect(users(:pablo)).to be_valid
+    expect(users(:ivan)).to be_valid
+    expect(users(:gabriela)).to be_valid
+  end   
+
   it 'is valid with name and email' do
-    user = User.new(name: 'John Doe', email: 'john@example.com')
-    expect(user).to be_valid
+    # user = User.new(name: 'John Doe', email: 'john@example.com')
+    expect(users(:pablo)).to be_valid
   end
 
   it 'is invalid with email and name length more than 50' do

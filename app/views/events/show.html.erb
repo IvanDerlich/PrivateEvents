@@ -3,6 +3,7 @@
     <p><%= @event.description %></p>
   </div>
   <div class="date">
-    <span><%= @event.date %></span>
+    <span><%= @event.date %> hosted by: </span>
+    <span><%= @event.creator.name %></span>
   </div>
 </div>

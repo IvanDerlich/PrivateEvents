@@ -7,7 +7,7 @@
         
         <%if logged_in? %>
           <li class="nav-item">
-            <%= link_to "Create Event", "#", class: "nav-link" %>
+            <%= link_to "Create Event", new_event_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Log out", logout_path, class: "nav-link",id: "logout", method: :delete %>

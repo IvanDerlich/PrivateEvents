@@ -1,10 +1,14 @@
-<small>    
-  Made by <a href="http://www.ivanderlich.com/">Ivan Derlich</a>
-  and <a href="https://github.com/ViriCruz">Gabriela Cruz</a>
+<% repo = "https://github.com/IvanDerlich/PrivateEvents"
+   specs = "https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations"
+%>
+<ul class="nav my-0 mr-md-auto">
+    <li><%= link_to "Repository", repo, class: "nav-item mr-3" %></li>        
+    <li><%= link_to "Specifications", specs, class: "nav-item mr-3" %></li>   
+</ul>
+<small class="w-20"> 
+  <div class="container ">
+    <h2>Made by</h2><br>
+    <a href="http://www.ivanderlich.com/">Ivan Derlich</a> and 
+    <a href="https://github.com/ViriCruz">Gabriela Cruz</a>
+  </div>   
 </small>
-<nav>
-  <ul>
-    <li><%= link_to "Home", root_path %></li>      
-    <li><a href="https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations">Specifications</a></li>
-  </ul>
-</nav>

@@ -5,34 +5,38 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+require 'time'
 
 user = User.create!(
   name: "Pablo", 
   email: "pablo@example.com"
 )
 
-Event.create!(
-  creator: user, 
-  description: "Pepe's birthday",
-  date: "2019-22-08 20:00:00"
+user.events.create!(
+  description: "Something going on",
+  date: Time.now.to_s
 )
+
 99.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@railstutorial.org"
   User.create!(
     name:  name,
     email: email   
-    )
+  )
 end
 
-users = User.order(:created_at).take(6)
+users = User.order(:created_at).take(50)
 
 50.times do
   description = Faker::Superhero.name+"'s promotion to "+Faker::Military.air_force_rank
-  users.each { |user| 
-      event = Event.new(creator: user, description: description, date: Time.now)
-      #user.events.create!(description: description) -> How to do it this way?
-  }
+  users.each do |u|
+    u.events.create!(
+      description: description,
+      date: Time.now.to_s
+    )
+    #event = Event.new(description: description, date: Time.now.to_s, creator: user)
+    #user.events.create!(description: description) -> How to do it this way?
+  end
 end
 

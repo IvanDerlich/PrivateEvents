@@ -1,23 +1,13 @@
-<header class="navbar fixed-top navbar-dark bg-dark">
-  <div class="container">
-    <%= link_to "Private Events", root_url, id: "logo" %>
-    <nav>
-      <ul class="nav d-flex justify-content-end">
-        <li class="nav-item"><%= link_to "View Events", events_url, class: "nav-link" %></li>
-        
-        <%if logged_in? %>
-          <li class="nav-item">
-            <%= link_to "Create Event", new_event_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Log out", logout_path, class: "nav-link",id: "logout", method: :delete %>
-          </li>
-          
-        <% else %>
-          <li class="nav-item"><%= link_to "Log in", login_path, class: "nav-link" %></li>
-          <li class="nav-item"><%= link_to "Sign Up", signup_url, class: "nav-link" %></li>
-        <% end %>
-      </ul>
-    </nav>
-  </div>
-</header>
+<h5 class="my-0 mr-md-auto font-weight-normal">
+  <%= link_to "Private Events", root_url, id: "logo" %>
+</h5>
+<nav class="my-2 my-md-0 mr-md-3">    
+    <%= link_to "View Events", events_url, class: "p-2 text-dark" %>
+    <%if logged_in? %>
+    <%= link_to "Create Event", new_event_path, class: "p-2 text-dark" %>
+    <%= link_to "Log out", logout_path, class: "p-2 text-dark",id: "logout", class: "btn btn-outline-secondary", method: :delete %>
+    <% else %>
+    <%= link_to "Log in", login_path, class: "p-2 text-dark" %>
+    <%= link_to "Sign Up", signup_url, class: "btn btn-outline-primary" %>
+    <% end %>   
+</nav>

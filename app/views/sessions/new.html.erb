@@ -7,8 +7,8 @@
 		<%= form_for :session, url: sessions_url do |f| %>
 			
 			<%= f.label :email %>
-			<%= f.email_field :email %>
-			<%= f.submit "Login" %>
+			<%= f.email_field :email, class: 'form-control' %>
+			<%= f.submit "Login", class: "btn btn-primary" %>
 		<% end %>
 	</div>
 </div>

@@ -26,7 +26,7 @@ user.events.create!(
   )
 end
 
-users = User.order(:created_at).take(50)
+users = User.order(:created_at).take(6)
 
 50.times do
   description = Faker::Superhero.name+"'s promotion to "+Faker::Military.air_force_rank
@@ -35,8 +35,6 @@ users = User.order(:created_at).take(50)
       description: description,
       date: Time.now.to_s
     )
-    #event = Event.new(description: description, date: Time.now.to_s, creator: user)
-    #user.events.create!(description: description) -> How to do it this way?
   end
 end
 

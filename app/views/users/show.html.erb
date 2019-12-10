@@ -1,2 +1,24 @@
 <h1>Welcome <%= @user.name %></h1>
-
+<div class="container">
+  <h2>Created events</h2>
+  <ul>
+    <% if !@events.empty? %>
+      <% @events.each do |event| %>
+        <li>
+          <div class="event-container">
+            <div class="description">
+              <p><%= event.description %></p>
+            </div>
+            <div class="date">
+              <span><%= event.date %></span>
+            </div>
+          </div>
+        </li>
+      <% end %>     
+    <% else %>
+      <div class="container">
+        <p>You haven't created events yet.</p>
+      </div>
+    <% end %>
+  </ul>
+</div>

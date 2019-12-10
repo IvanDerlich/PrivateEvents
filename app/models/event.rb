@@ -6,4 +6,7 @@ class Event < ApplicationRecord
     #validate that date makes sense and is not just a string
 
     belongs_to :creator, class_name: "User"
+    has_many :attendances, foreign_key: :attended_event_id
+    has_many :attendees, through: :attendances, source: :attendee
+    
 end

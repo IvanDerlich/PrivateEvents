@@ -5,7 +5,7 @@
     <%= link_to "View Events", events_url, class: "p-2 text-dark" %>
     <%if logged_in? %>
     <%= link_to "Create Event", "#", class: "p-2 text-dark" %>
-    <%= link_to "Log out", logout_path, class: "p-2 text-dark",id: "logout", method: :delete %>
+    <%= link_to "Log out", logout_path, class: "p-2 text-dark",id: "logout", class: "btn btn-outline-secondary", method: :delete %>
     <% else %>
     <%= link_to "Log in", login_path, class: "p-2 text-dark" %>
     <%= link_to "Sign Up", new_user_url, class: "btn btn-outline-primary" %>

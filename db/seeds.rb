@@ -35,8 +35,6 @@ users = User.order(:created_at).take(6)
       description: description,
       date: Time.now.to_s
     )
-    #event = Event.new(description: description, date: Time.now.to_s, creator: user)
-    #user.events.create!(description: description) -> How to do it this way?
   end
 end
 

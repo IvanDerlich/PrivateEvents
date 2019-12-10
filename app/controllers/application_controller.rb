@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  helper_method :logged_in?
+  helper_method :logged_in?, :current_user
 
   def log_in(user)
 		session[:user_id] = user.id
@@ -7,7 +7,11 @@ class ApplicationController < ActionController::Base
   
   def current_user
 		current_user ||= User.find_by(id: session[:user_id])
-	end
+  end
+  
+  def current_user?(user)
+    user == current_user
+  end
 
 	def logged_in?
 		!current_user.nil?
@@ -23,5 +27,10 @@ class ApplicationController < ActionController::Base
       flash[:danger] = "Please log in."
       redirect_to login_url
     end
+  end
+
+  def correct_user
+    @user = User.find(params[:id])
+    redirect_to(root_url) unless current_user?(@user)
   end
 end

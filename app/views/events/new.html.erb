@@ -1,6 +1,6 @@
 <%= form_for(@event, url: events_url) do |f| %>
   <%= render 'shared/error_messages', object: @event %>
   <%= f.label :description %>
-  <%= f.text_field :description %>
-  <%= f.submit 'Create event' %>
+  <%= f.text_field :description, class: 'form-control' %>
+  <%= f.submit 'Create event', class: "btn btn-primary" %>
 <% end %>

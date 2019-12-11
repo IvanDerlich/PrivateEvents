@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'time'
 class EventsController < ApplicationController
   def new
@@ -15,7 +17,7 @@ class EventsController < ApplicationController
   end
 
   def index
-    events = Event.all.order("created_at desc")
+    events = Event.all.order('created_at desc')
     @upcoming_events = events.upcoming_events
     @past_events = events.previous_events
   end
@@ -26,6 +28,7 @@ class EventsController < ApplicationController
   end
 
   private
+
   def event_params
     params.require(:event).permit(:description)
   end

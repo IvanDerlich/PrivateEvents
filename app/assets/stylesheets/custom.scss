@@ -25,3 +25,14 @@ main{
 .form-control{
   margin-bottom: 10px;
 }
+
+ul.no-bullets {
+  list-style-type: none;
+}
+
+li.event{
+  margin-bottom: 10px;
+  border-bottom: 1px solid grey;
+  padding-bottom: 20px;
+  text-align: center;
+}

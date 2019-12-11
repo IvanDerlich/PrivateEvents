@@ -1,69 +1,20 @@
-<h1>Welcome <%= @user.name %></h1>
+<h1 class="text-center pt-4 pb-4">Welcome <%= @user.name %></h1>
 <div class="container">
   <section class="user-events">
     <section>
-      <h2>Created events</h2>
-      <ul class="list-unstyled">
-        <% if !@events.empty? %>
-          <% @events.each do |event| %>
-            <li>
-              <div class="event-container">
-                <div class="description">
-                  <p><%= event.description %></p>
-                </div>
-                <div class="date">
-                  <span><%= event.date %></span>
-                </div>
-              </div>
-            </li>
-          <% end %>     
-        <% else %>
-          <div class="container">
-            <p>You haven't created events yet.</p>
-          </div>
-        <% end %>
-      </ul>
+      <h2 class="text-center">Created events</h2>
+      <%= render 'shared/events_list', object: @events %>
     </section>
     <section>
       <h2>Attending events</h2>
       <section class="upcoming-events">
         <h3>Upcoming events</h3>
-        <ul class="list-unstyled">
-          <% if !@upcoming_events.empty? %>
-            <% @upcoming_events.each do |event| %>
-              <li>
-                <div class="event-container">
-                  <div class="description">
-                    <p><%= event.description %></p>
-                  </div>
-                  <div class="date">
-                    <span><%= event.date %></span>
-                  </div>
-                </div>
-              </li>
-            <% end %>
-          <% end %>
-        </ul>
+        <%= render 'shared/events_list', object: @upcoming_events %>
       </section>
       <section class="past-events">
         <h3>Past events</h3>
-        <ul class="list-unstyled">
-          <% if !@past_events.empty? %>
-            <% @past_events.each do |event| %>
-              <li>
-                <div class="event-container">
-                  <div class="description">
-                    <p><%= event.description %></p>
-                  </div>
-                  <div class="date">
-                    <span><%= event.date %></span>
-                  </div>
-                </div>
-              </li>
-            <% end %>
-          <% end %>
-        </ul>
+        <%= render 'shared/events_list', object: @past_events %>
       </section>
     </section>
-  </section>
+  </section>  
 </div>

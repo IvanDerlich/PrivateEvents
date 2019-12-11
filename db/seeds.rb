@@ -33,4 +33,3 @@ Attendance.create!(
   attended_event_id: 4,
   attendee_id: 1
 )
-

@@ -29,7 +29,13 @@ users = User.order(:created_at).take(6)
   end
 end
 
-Attendance.create!(
-  attended_event_id: 4,
-  attendee_id: 1
-)
+events = Event.order(:created_at).take(6)
+
+events.each do |e|
+  users.each do |u|
+    Attendance.create!(
+      attended_event_id: e.id,
+      attendee_id: u.id      
+    )
+  end
+end

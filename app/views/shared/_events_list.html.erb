@@ -1,20 +1,20 @@
-<ul class="no-bullets">
-      <% if !@events.empty? %>
-        <% @events.each do |event| %>
-          <li class="event">
-            <div class="event-container">
-              <div class="description">
-                <p> <%= link_to event.description, event, class: "nav-link" %></p>
-              </div>
-              <div class="date">
-                <span>Date: <%= event.date %></span>
-              </div>
-            </div>
-          </li>
-        <% end %>     
-      <% else %>
-        <div class="container">
-          <p>There are no events.</p>
+<ul class="list-unstyled">
+  <% if !object.empty? %>
+    <% object.each do |event| %>
+      <li class="event">
+        <div class="event-container">
+          <div class="description">
+            <p> <%= link_to event.description, event, class: "nav-link" %></p>
+          </div>
+          <div class="date">
+            <span>Date: <%= event.date %></span>
+          </div>
         </div>
-      <% end %>
-    </ul>
+      </li>
+    <% end %>     
+  <% else %>
+    <div class="container">
+      <p>There are no events.</p>
+    </div>
+  <% end %>
+</ul>

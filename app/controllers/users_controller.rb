@@ -21,7 +21,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @events = @user.events.order("created_at desc")
+    @events = @user.events.all.order("created_at desc")
+    @upcoming_events = @user.attended_events.upcoming_events
+    @past_events = @user.attended_events.previous_events
+    # @attended_events = @user.attended_events.order(created_at: :desc)
   end
 
   private

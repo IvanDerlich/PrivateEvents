@@ -10,19 +10,19 @@ html, body {
   bottom: 0;
 }
 
-header{
+header {
   height:50px;
   width:100%;
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
 }
 
-main{
+main {
   margin-bottom: 50px; /*equals to footer's height*/
   margin-top: 50px; /*equals to header's height*/
 }
 
-.form-control{
+.form-control {
   margin-bottom: 10px;
 }
 
@@ -30,7 +30,7 @@ ul.no-bullets {
   list-style-type: none;
 }
 
-li.event{
+li.event {
   margin-bottom: 10px;
   border-top: 1px solid grey;
   padding-bottom: 20px;

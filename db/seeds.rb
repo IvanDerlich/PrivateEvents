@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'time'
+# require 'time'
 
 user = User.create!(
   name: "Pablo", 
@@ -13,8 +13,8 @@ user = User.create!(
 )
 
 user.events.create!(
-  description: "Something going on",
-  date: Time.now.to_s
+  description: "Future event",
+  date: '2019-12-12'
 )
 
 99.times do |n|
@@ -33,8 +33,13 @@ users = User.order(:created_at).take(6)
   users.each do |u|
     u.events.create!(
       description: description,
-      date: Time.now.to_s
+      date: Time.now
     )
   end
 end
+
+Attendance.create!(
+  attended_event_id: 4,
+  attendee_id: 1
+)
 

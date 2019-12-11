@@ -15,11 +15,14 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all.order("created_at desc")
+    events = Event.all.order("created_at desc")
+    @upcoming_events = events.upcoming_events
+    @past_events = events.previous_events
   end
 
   def show
     @event = Event.find_by(id: params[:id])
+    @attendees = @event.attendees
   end
 
   private

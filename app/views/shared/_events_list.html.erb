@@ -1,0 +1,20 @@
+<ul class="no-bullets">
+      <% if !@events.empty? %>
+        <% @events.each do |event| %>
+          <li>
+            <div class="event-container border">
+              <div class="description">
+                <p>Description: <%= link_to event.description, event, class: "nav-link" %></p>
+              </div>
+              <div class="date">
+                <span>Date: <%= event.date %></span>
+              </div>
+            </div>
+          </li>
+        <% end %>     
+      <% else %>
+        <div class="container">
+          <p>There are no events.</p>
+        </div>
+      <% end %>
+    </ul>

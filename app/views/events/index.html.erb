@@ -1,25 +1,6 @@
 <div class="container">
   <h1>List of events</h1>
   <div class="upcoming-events">
-    <ul>
-      <% if !@events.empty? %>
-        <% @events.each do |event| %>
-          <li>
-            <div class="event-container">
-              <div class="description">
-                <p><%= link_to event.description, event, class: "nav-link" %></p>
-              </div>
-              <div class="date">
-                <span><%= event.date %></span>
-              </div>
-            </div>
-          </li>
-        <% end %>     
-      <% else %>
-        <div class="container">
-          <p>There are no events.</p>
-        </div>
-      <% end %>
-    </ul>
+    <%= render 'shared/events_list'%>
   </div>
 </div>

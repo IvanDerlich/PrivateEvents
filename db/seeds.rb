@@ -7,15 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # require 'time'
 
-# user = User.create!(
-#   name: "Pablo", 
-#   email: "pablo@example.com"
-# )
+user = User.create!(
+  name: "Pablo", 
+  email: "pablo@example.com"
+)
 
-# user.events.create!(
-#   description: "Something going on",
-#   date: Time.now.to_s
-# )
+user.events.create!(
+  description: "Future event",
+  date: '2019-12-12'
+)
 
 99.times do |n|
   name  = Faker::Name.name
@@ -33,8 +33,13 @@ users = User.order(:created_at).take(6)
   users.each do |u|
     u.events.create!(
       description: description,
-      date: Time.now.to_s
+      date: Time.now
     )
   end
 end
+
+Attendance.create!(
+  attended_event_id: 4,
+  attendee_id: 1
+)
 

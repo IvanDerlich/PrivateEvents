@@ -8,4 +8,10 @@ class User < ApplicationRecord
          uniqueness: { case_sensitive: false }
 
     has_many :events, foreign_key: "creator_id", class_name: "Event"
+
+    private
+
+    def downcase_email
+        self.email = email.downcase
+    end
 end

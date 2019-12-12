@@ -2,5 +2,7 @@
   <%= render 'shared/error_messages', object: @event %>
   <%= f.label :description %>
   <%= f.text_field :description, class: 'form-control' %>
+  <%= f.label :date %>
+  <%= f.date_field :date, class: 'form-control' %>
   <%= f.submit 'Create event', class: "btn btn-primary" %>
 <% end %>

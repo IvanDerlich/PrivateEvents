@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'time'
 class EventsController < ApplicationController
   def new
     @event = Event.new
@@ -8,7 +7,6 @@ class EventsController < ApplicationController
 
   def create
     @event = current_user.events.build(event_params)
-    @event.date = Time.now.to_s
     if @event.save
       redirect_to current_user
     else

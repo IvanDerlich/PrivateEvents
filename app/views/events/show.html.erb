@@ -1,0 +1,21 @@
+<div class="event-container text-center">
+  <div class="description pt-5 pb-4">  
+    <h2><%= @event.description %></h2>
+  </div>
+  <div class="date">
+    <span><b>Date:</b> <%= @event.date %></span><br>
+    <span><b>Hosted by:</b> <%= @event.creator.name %></span>
+  </div>
+  <% if !@attendees.empty? %>
+  <section class="attendees">
+    <h1 class="">Attendees:</h1>
+    <ul class="list-unstyled">
+      <% @attendees.each do |attendee| %>
+        <li> 
+          <%= attendee.name %>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+  <% end %>
+</div>

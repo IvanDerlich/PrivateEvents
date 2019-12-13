@@ -1,0 +1,9 @@
+event1:
+  description: "Costumes party"
+  date: "2019-12-05 20:45:17"
+  creator: ivan
+
+event2:
+  description: "Happy hour"
+  date: "2019-12-05 20:45:17"
+  creator: gabriela
